@@ -1,0 +1,63 @@
+﻿<Window x:Name="Mantenimiento" x:Class="Ejercicio1.MantenimientoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ejercicio1"
+        mc:Ignorable="d"
+        Title="Mantenimiento" Height="220" Width="1010">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="135"></ColumnDefinition>
+            <ColumnDefinition Width="220"></ColumnDefinition>
+            <ColumnDefinition Width="115"></ColumnDefinition>
+            <ColumnDefinition Width="220"></ColumnDefinition>
+            <ColumnDefinition Width="75"></ColumnDefinition>
+            <ColumnDefinition Width="210"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="dniLabel" Content="DNI:" HorizontalAlignment="Right" Margin="5" VerticalAlignment="Top" Grid.Column="0" Grid.Row="0"/>
+        <TextBox x:Name="dniTextBox" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="0"/>
+
+        <Label x:Name="nombreLabel" Content="Nombre:" HorizontalAlignment="Right" Margin="5" VerticalAlignment="Top" Grid.Column="2" Grid.Row="0"/>
+        <TextBox x:Name="nombreTextBox" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="0"/>
+
+        <Label x:Name="apellidosLabel" Content="Apellidos:" HorizontalAlignment="Right" Margin="5" VerticalAlignment="Top" Grid.Column="4" Grid.Row="0"/>
+        <TextBox x:Name="apellidosTextBox" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Grid.Column="5" Grid.Row="0"/>
+
+        <Label x:Name="emailLabel" Content="E-mail:" HorizontalAlignment="Right" Margin="5" VerticalAlignment="Top" Grid.Column="0"  Grid.Row="1"/>
+        <TextBox x:Name="emailTextBox" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1"/>
+
+        <Label x:Name="contrasenaLabel" Content="Contraseña:" HorizontalAlignment="Right" Margin="5" VerticalAlignment="Top" Grid.Column="2" Grid.Row="1"/>
+        <TextBox x:Name="contrasenaTextBox" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="1"/>
+
+        <Label x:Name="fechaNacimientoLabel" Content="Fecha de nacimiento:" HorizontalAlignment="Right" Margin="5" VerticalAlignment="Top" Grid.Column="0" Grid.Row="2"/>
+        <DatePicker x:Name="fechaNacimientoDatePicker" HorizontalAlignment="Left" Margin="5" VerticalAlignment="Top" Width="200" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2"/>
+
+        <Label x:Name="fechaRegistroLabel" Content="Fecha de registro:" HorizontalAlignment="Right" Margin="5" VerticalAlignment="Top" Grid.Column="2" Grid.Row="2"/>
+        <DatePicker x:Name="fechaRegistroDatePicker" HorizontalAlignment="Left" Margin="5" VerticalAlignment="Top" Width="200" Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="2"/>
+
+        <Label x:Name="estadoLabel" Content="Estado:" HorizontalAlignment="Right" Margin="5" VerticalAlignment="Top" Grid.Column="0" Grid.Row="3"/>
+        <ComboBox x:Name="estadoComboBox" HorizontalAlignment="Left" Margin="5" VerticalAlignment="Top" Width="203" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3">
+            <ComboBoxItem Content="Activa" HorizontalAlignment="Left" Width="201"/>
+            <ComboBoxItem Content="Bloqueada" HorizontalAlignment="Left" Width="201"/>
+            <ComboBoxItem Content="Deshabilitada" HorizontalAlignment="Left" Width="201"/>
+        </ComboBox>
+
+        <Label x:Name="telefonoLabel" Content="Teléfono:" HorizontalAlignment="Right" Margin="5" VerticalAlignment="Top" Grid.Column="2" Grid.Row="3"/>
+        <TextBox x:Name="telefonoTextBox" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="3"/>
+
+        <WrapPanel Grid.Column="5" Grid.RowSpan="3" Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="anadirButton" Content="Añadir" HorizontalAlignment="Left" Margin="5" VerticalAlignment="Top" Width="75" Click="anadirButton_Click"/>
+            <Button x:Name="modificarButton" Content="Modificar" HorizontalAlignment="Left" Margin="5" VerticalAlignment="Top" Width="75" Click="modificarButton_Click" IsEnabled="False"/>
+            <Button x:Name="eliminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="5" VerticalAlignment="Top" Width="75" Click="eliminarButton_Click" IsEnabled="False"/>
+        </WrapPanel>
+
+    </Grid>
+</Window>

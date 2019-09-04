@@ -1,0 +1,69 @@
+﻿<Window x:Name="Consultas" x:Class="Ejercicio1.ConsultasWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ejercicio1"
+        mc:Ignorable="d"
+        Title="Consultas" Height="600" Width="755">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="220"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <Button x:Name="mantenimientoButton" Content="Mantenimiento" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Center" Width="90" Grid.Column="0" Grid.Row="0" Click="mantenimientoButton_Click"/>
+
+        <GroupBox x:Name="consultarUsuarioGroupBox" Header="Consultar por usuario:" HorizontalAlignment="Center" Height="140" Margin="5" VerticalAlignment="Center" Width="180" Grid.Column="1" Grid.Row="0">
+            <Border Margin="5">
+                <StackPanel>
+                    <TextBox x:Name="consultarTextBox" HorizontalAlignment="Center" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <Button x:Name="consultarButton" Content="Ver" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Top" Width="75" Click="consultarButton_Click"/>
+                </StackPanel>
+            </Border>
+        </GroupBox>
+
+        <GroupBox x:Name="consultarEstadoGroupBox" Header="Consultar por estado:" HorizontalAlignment="Center" Height="140" Margin="5" VerticalAlignment="Center" Width="180" Grid.Column="2" Grid.Row="0">
+            <Border Margin="5">
+                <StackPanel>
+                    <RadioButton x:Name="activaRadioButton" Content="Activa" HorizontalAlignment="Left" Margin="5" VerticalAlignment="Top"/>
+                    <RadioButton x:Name="bloqueadaRadioButton" Content="Bloqueada" HorizontalAlignment="Left" Margin="5" VerticalAlignment="Top"/>
+                    <RadioButton x:Name="deshabilitadaRadioButton" Content="Deshabilitada" HorizontalAlignment="Left" Margin="5" VerticalAlignment="Top"/>
+                    <Button x:Name="consultarEstadoButton" Content="Ver" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Top" Width="75" Click="consultarEstadoButton_Click"/>
+                </StackPanel>
+            </Border>
+        </GroupBox>
+
+        <GroupBox x:Name="consultarFechaRegistroGroupBox" Header="Consultar por fecha de registro:" HorizontalAlignment="Center" Height="140" Margin="5" VerticalAlignment="Center" Width="200" Grid.Column="3" Grid.Row="0">
+            <Border Margin="5">
+                <StackPanel>
+                    <DatePicker x:Name="consultarFechaDatePicker" HorizontalAlignment="Center" Height="23" Margin="5" VerticalAlignment="Top" Width="120"/>
+                    <Button x:Name="consultarFechaButton" Content="Ver" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Top" Width="75" Click="consultarFechaButton_Click"/>
+                </StackPanel>
+            </Border>
+        </GroupBox>
+
+        <DataGrid x:Name="datosDataGrid" HorizontalAlignment="Left" Height="350" Margin="5" VerticalAlignment="Top" Width="700" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="1" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="DNI" Binding="{Binding Dni}"/>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}"/>
+                <DataGridTextColumn Header="Apellidos" Binding="{Binding Apellidos}"/>
+                <DataGridTextColumn Header="E-mail" Binding="{Binding Email}"/>
+                <DataGridTextColumn Header="Contraseña" Binding="{Binding Contrasena}"/>
+                <DataGridTextColumn Header="Fecha de nacimiento" Binding="{Binding FechaNacimiento}"/>
+                <DataGridTextColumn Header="Fecha de registro" Binding="{Binding FechaRegistro}"/>
+                <DataGridTextColumn Header="Estado" Binding="{Binding Estado}"/>
+                <DataGridTextColumn Header="Teléfono" Binding="{Binding Telefono}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="verDatosButton" Content="Ver" HorizontalAlignment="Right" Margin="5" VerticalAlignment="Bottom" Width="75" Grid.Column="3" Grid.Row="1" Click="verDatosButton_Click" />
+
+    </Grid>
+</Window>
